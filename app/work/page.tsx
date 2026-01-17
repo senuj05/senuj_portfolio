@@ -1,10 +1,10 @@
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import UXProjects from '@/components/UXProjects'
-import Footer from '@/components/Footer'
 
 export default function WorkPage() {
   return (
-    <main className="flex-1 flex flex-col bg-[#F4F0E8]">
+    <main className="min-h-screen bg-[#F4F0E8] text-[#53232A]">
       <Header />
       <UXProjects />
       <Footer />
