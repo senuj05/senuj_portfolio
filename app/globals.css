@@ -3,114 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply text-gray-900;
-    background-color: #F4F0E8;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
   html {
     scroll-behavior: smooth;
   }
-}
 
-@layer utilities {
-  .gradient-logo {
-    background: linear-gradient(135deg, #a8e063 0%, #ffd93d 100%);
-  }
-
-  @keyframes shake-head {
-    0%, 100% {
-      transform: rotate(0deg);
-    }
-    10%, 30%, 50%, 70%, 90% {
-      transform: rotate(-5deg);
-    }
-    20%, 40%, 60%, 80% {
-      transform: rotate(5deg);
-    }
-  }
-
-  .shake-head {
-    animation: shake-head 4s ease-in-out infinite;
-  }
-
-  .zoom-out {
-    transform: scale(0.7);
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slide-in {
-    from {
-      opacity: 0;
-      transform: translateX(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.8s ease-out;
-  }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out forwards;
-  }
-
-  .animate-slide-in {
-    animation: slide-in 0.8s ease-out 0.2s both;
-  }
-
-  .font-fraunces {
-    font-variation-settings: "SOFT" 0, "WONK" 0;
-  }
-
-  /* Gentle floating animation for desktop project boxes */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .floating-box {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  /* Hide scrollbars while preserving scroll */
-  .scrollbar-hide {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-  }
-
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+  body {
+    @apply bg-[#F4F0E8] text-[#53232A];
   }
 }
