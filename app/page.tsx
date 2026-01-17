@@ -1,11 +1,11 @@
-import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import ProjectThumbnails from '@/components/ProjectThumbnails'
+import Footer from '@/components/Footer'
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <main className="min-h-screen bg-[#F4F0E8] text-[#53232A]">
+    <main className="flex-1 flex flex-col">
       <Header />
       <Hero />
       <ProjectThumbnails />

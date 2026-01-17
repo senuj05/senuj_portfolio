@@ -1,10 +1,10 @@
+import Header from '@/components/Header'
 import About from '@/components/About'
 import Footer from '@/components/Footer'
-import Header from '@/components/Header'
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#F4F0E8] text-[#53232A]">
+    <main className="flex-1 flex flex-col">
       <Header />
       <About />
       <Footer />
