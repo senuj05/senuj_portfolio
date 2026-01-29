@@ -4,7 +4,7 @@ import UXProjects from '@/components/UXProjects'
 
 export default function WorkPage() {
   return (
-    <main className="min-h-screen bg-[#F4F0E8] text-[#53232A]">
+    <main className="min-h-screen bg-[#F0EDE5] text-[#53232A]">
       <Header />
       <UXProjects />
       <Footer />

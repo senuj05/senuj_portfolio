@@ -4,7 +4,7 @@ import Header from '@/components/Header'
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#F4F0E8] text-[#53232A]">
+    <main className="min-h-screen bg-[#F0EDE5] text-[#53232A]">
       <Header />
       <About />
       <Footer />

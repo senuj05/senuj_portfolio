@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function UXProjects() {
   const projects = [
-    { id: 1, title: 'Cards with Hearts', subtitle: 'Design · Product · UX', video: '/images/cardswhearts.mov', href: '/work/cards-with-hearts' },
+    { id: 1, title: 'Cards with Hearts', subtitle: 'Product Design · Dev', video: '/images/cardswhearts.mov', href: '/work/cards-with-hearts' },
     { id: 2, title: 'Huddle', subtitle: 'UI/UX · Design', image: '/images/Huddle_.png', href: '/work/huddle' },
     { id: 3, title: 'Smart Resume Matcher', subtitle: 'Dev · WebApp', image: '/images/smartresume.png', href: '/work/smart-resume-matcher' },
     { id: 4, title: 'Master Chef', subtitle: 'Dev · WebApp', image: '/images/masterchef.png', href: '/work/master-chef' },
@@ -12,7 +12,7 @@ export default function UXProjects() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#F4F0E8] pt-32 pb-20 px-8 md:px-12 lg:px-16">
+    <div className="min-h-screen bg-[#F0EDE5] pt-32 pb-20 px-8 md:px-12 lg:px-16">
       {/* Header */}
       <div className="mb-12">
         <h1 className="text-[#53232A] mb-2 text-4xl md:text-5xl font-bold">Projects</h1>

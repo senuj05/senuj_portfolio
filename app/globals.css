@@ -8,6 +8,33 @@
   }
 
   body {
-    @apply bg-[#F4F0E8] text-[#53232A];
+    @apply bg-[#F0EDE5] text-[#53232A];
+  }
+}
+
+#smooth-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+#smooth-content {
+  overflow: visible;
+}
+
+
+@media (pointer: fine) {
+  body,
+  body * {
+    cursor: none !important;
+  }
+
+  .cursor-visible,
+  .cursor-visible * {
+    cursor: auto !important;
+  }
+
+  .cursor-visible a,
+  .cursor-visible button {
+    cursor: pointer !important;
   }
 }

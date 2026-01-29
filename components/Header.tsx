@@ -25,12 +25,13 @@ export default function Header() {
     { number: '01', label: 'Home', href: '/' },
     { number: '02', label: 'About', href: '/about' },
     { number: '03', label: 'Work', href: '/work' },
-    { number: '04', label: 'Gallery', href: '/films' },
+    { number: '04', label: 'Play', href: '/playground' },
+    { number: '05', label: 'Gallery', href: '/films' },
   ]
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F4F0E8] border-b border-gray-200">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F0EDE5] border-b border-gray-200 cursor-visible">
         <div className="px-6 md:px-12 lg:px-24 py-8 flex items-center justify-between">
           {/* Left Side - Logo and Brand */}
           <div className="flex items-center gap-3">
@@ -42,13 +43,16 @@ export default function Header() {
 
           {/* Center - Navigation Links */}
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/work" className={`text-base md:text-lg font-medium text-gray-500 hover:text-gray-900 transition-colors ${pathname === '/work' ? 'text-gray-900' : ''}`}>
+            <Link href="/work" className={`text-base md:text-lg font-normal text-gray-500 hover:text-gray-900 transition-colors ${pathname === '/work' ? 'text-gray-900' : ''}`}>
               Work
             </Link>
-            <Link href="/about" className={`text-base md:text-lg font-medium text-gray-500 hover:text-gray-900 transition-colors ${pathname === '/about' ? 'text-gray-900' : ''}`}>
+            <Link href="/playground" className={`text-base md:text-lg font-normal text-gray-500 hover:text-gray-900 transition-colors ${pathname === '/playground' ? 'text-gray-900' : ''}`}>
+              Play
+            </Link>
+            <Link href="/about" className={`text-base md:text-lg font-normal text-gray-500 hover:text-gray-900 transition-colors ${pathname === '/about' ? 'text-gray-900' : ''}`}>
               About
             </Link>
-            <Link href="/films" className={`text-base md:text-lg font-medium text-gray-500 hover:text-gray-900 transition-colors ${pathname === '/films' ? 'text-gray-900' : ''}`}>
+            <Link href="/films" className={`text-base md:text-lg font-normal text-gray-500 hover:text-gray-900 transition-colors ${pathname === '/films' ? 'text-gray-900' : ''}`}>
               Gallery
             </Link>
           </nav>
@@ -70,7 +74,7 @@ export default function Header() {
 
       {/* Full-Screen Overlay Menu */}
       {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-white">
+        <div className="fixed inset-0 z-40 bg-white cursor-visible">
           <div className="h-full flex flex-col">
             {/* Top Bar with Logo and Close Button */}
             <div className="flex justify-between items-center px-6 pt-6 pb-6">
@@ -105,7 +109,7 @@ export default function Header() {
                   >
                     <div className="flex items-center gap-4">
                       <span className="text-sm text-gray-400 font-medium w-8">{item.number}</span>
-                      <span className="text-3xl md:text-4xl font-bold text-gray-900 group-hover:text-gray-600 transition-colors">
+                      <span className="text-3xl md:text-4xl font-normal text-gray-900 group-hover:text-gray-600 transition-colors">
                         {item.label}
                       </span>
                     </div>
