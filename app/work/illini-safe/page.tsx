@@ -23,7 +23,7 @@ export default function IlliniSafePage() {
     <main className="flex-1 flex flex-col bg-[#F0EDE5] text-[#53232A]">
       <Header />
 
-      <div className="px-6 md:px-12 lg:px-20 py-16 lg:py-24">
+      <div className="flex-grow px-6 md:px-12 lg:px-20 py-16 lg:py-24">
         <div
           className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-10 lg:gap-16 items-start"
           style={{ fontFamily: 'array-proportional, sans-serif' }}
@@ -130,7 +130,7 @@ export default function IlliniSafePage() {
 
       <div className="px-6 md:px-12 lg:px-20 pb-10">
         <div className="border-t border-[#53232A]/30 pt-6 text-center text-2xl md:text-3xl italic text-[#53232A]">
-   
+
         </div>
       </div>
 

@@ -13,7 +13,7 @@ export default function CardsWithHeartsPage() {
     <main className="flex-1 flex flex-col bg-[#F0EDE5] text-[#53232A]">
       <Header />
 
-      <div className="px-6 md:px-12 lg:px-16 py-10 lg:py-16">
+      <div className="flex-grow px-6 md:px-12 lg:px-16 py-10 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-[200px_minmax(0,1fr)] gap-8 lg:gap-14">
           <div className="hidden lg:block">
             <aside
@@ -43,7 +43,7 @@ export default function CardsWithHeartsPage() {
 
               <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10">
                 <div className="space-y-4">
-                      <p className="text-xs uppercase tracking-[0.2em] text-[#86A433] font-semibold">Overview</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#86A433] font-semibold">Overview</p>
                   <h1 className={`text-4xl md:text-5xl font-semibold ${chelseaMarket.className}`}>
                     Cards with Hearts
                   </h1>
@@ -63,11 +63,11 @@ export default function CardsWithHeartsPage() {
                     <div className="text-xs uppercase tracking-[0.2em] text-[#86A433] font-semibold">Timeline</div>
                     <div>Sep 2025 – Jan 2026</div>
                   </div>
-                      <div className="space-y-2">
+                  <div className="space-y-2">
                     <div className="text-xs uppercase tracking-[0.2em] text-[#86A433] font-semibold">Role</div>
                     <div>Product Designer &amp; Developer</div>
                   </div>
-                      <div className="space-y-2">
+                  <div className="space-y-2">
                     <div className="text-xs uppercase tracking-[0.2em] text-[#86A433] font-semibold">Team</div>
                     <div>
                       <span className="block">2 PM</span>
@@ -75,7 +75,7 @@ export default function CardsWithHeartsPage() {
                       <span className="block">1 Content Writer</span>
                     </div>
                   </div>
-                      <div className="space-y-2">
+                  <div className="space-y-2">
                     <div className="text-xs uppercase tracking-[0.2em] text-[#86A433] font-semibold">Tools</div>
                     <div>
                       <span className="block">Figma</span>
