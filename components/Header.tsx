@@ -99,7 +99,7 @@ export default function Header() {
             </div>
 
             {/* Menu Items */}
-            <nav className="flex-1 flex flex-col justify-center px-6">
+            <nav className="flex-1 flex flex-col pt-12 px-6">
               {menuItems.map((item, index) => (
                 <div key={item.number}>
                   <Link
