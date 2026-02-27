@@ -16,7 +16,7 @@ export default function About() {
         <div className="space-y-6" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
           <p className="text-lg leading-relaxed text-gray-900">
             Hi, I&apos;m Senuvi Jayasinghe, a passionate design and development enthusiast with a dual focus on Computer Science and Statistics. I thrive on creating exceptional user experiences that blend creativity with functionality. From designing intuitive interfaces to developing seamless web applications, I enjoy bringing innovative ideas to life through technology. I recently graduated with my Bachelor&apos;s degree from the University of Illinois Urbana-Champaign. My projects reflect a unique combination of programming, data analysis, and user-centric design, aimed at solving real-world challenges with creative and effective solutions.
-            Outsdie of work, I love travelling, cooking, and drawing, where I am always seeking new ways to express my creativity. Feel free to explore my portfolio to see how I combine design and technology to make a meaningful impact.
+            Outside of work, I love travelling, cooking, and drawing, where I am always seeking new ways to express my creativity. Feel free to explore my portfolio to see how I combine design and technology to make a meaningful impact.
           </p>
 
         </div>
