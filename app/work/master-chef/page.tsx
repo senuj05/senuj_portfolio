@@ -17,7 +17,7 @@ const galleryImages = [
 
 export default function MasterChefPage() {
   return (
-    <main className="flex-1 flex flex-col bg-[#F0EDE5] text-[#53232A]">
+    <main className="flex-1 flex flex-col bg-white text-[#53232A]">
       <Header />
 
       <div className="flex-grow px-6 md:px-12 lg:px-20 py-16 lg:py-24">
@@ -27,9 +27,9 @@ export default function MasterChefPage() {
         >
           <div className="space-y-8 text-[#5a2b2b] min-w-0 pt-16 lg:pt-24">
             <p className="italic text-lg text-[#6b352f] text-center lg:text-left">[Recipe Finder, Quick Discovery]</p>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">MasterChef — Recipe Finder</h1>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">MasterChef - Recipe Finder</h1>
             <p className="text-base md:text-lg text-[#4a241f]">
-              “MasterChef” is a web app that helps you decide what to cook—fast. Search by ingredients you have, target a cook time,
+              “MasterChef” is a web app that helps you decide what to cook - fast. Search by ingredients you have, target a cook time,
               add dietary needs, and get tailored recipes anywhere you are.
             </p>
 
@@ -37,7 +37,7 @@ export default function MasterChefPage() {
               <div className="font-semibold uppercase underline decoration-current/50 text-sm tracking-[0.14em]">Overview</div>
               <p className="text-sm leading-relaxed text-[#4a241f]">
                 A lightweight, user-friendly recipe finder that surfaces relevant meals from simple inputs: keywords, available ingredients,
-                and desired prep/cook time. The experience focuses on quick discovery, clear instructions, and minimal friction—ideal for busy
+                and desired prep/cook time. The experience focuses on quick discovery, clear instructions, and minimal friction - ideal for busy
                 students and home cooks.
               </p>
             </div>

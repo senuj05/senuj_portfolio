@@ -6,12 +6,6 @@ import ScrollSmoother from "gsap/ScrollSmoother"
 
 const sections = [
   { id: "overview", label: "Overview" },
-  { id: "context", label: "Context" },
-  { id: "insights", label: "Insights" },
-  { id: "problem", label: "The Problem" },
-  { id: "design-process", label: "Design Process" },
-  { id: "solution", label: "Solution" },
-  { id: "outcome", label: "The Outcome" },
 ]
 
 export default function SidebarNav() {

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[#F0EDE5] text-[#53232A] cursor-none">
+      <body className="min-h-screen bg-white text-[#53232A] cursor-none">
         <CursorDot />
         <SmoothScroller>{children}</SmoothScroller>
       </body>

@@ -5,7 +5,7 @@ import ProjectThumbnails from '@/components/ProjectThumbnails'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen flex flex-col bg-[#F0EDE5] text-[#53232A]">
+    <main className="min-h-screen flex flex-col bg-white text-[#53232A]">
       <Header />
       <div className="flex-grow pt-24">
         <Hero />

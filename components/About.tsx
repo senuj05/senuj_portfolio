@@ -7,7 +7,6 @@ export default function About() {
       {/* Header Section */}
       <div className="mb-16" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
         <h1 className="text-4xl md:text-5xl font-bold text-[#53232A] mb-2"> Hi, I&apos;m Senu</h1>
-        <p className="text-lg md:text-xl italic text-[#755656] ml-2">Designer, Developer, & Creative Technologist</p>
       </div>
 
       {/* Profile Section */}

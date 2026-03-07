@@ -8,7 +8,7 @@ const BASE_CURVE = 90
 const VIEWBOX_WIDTH = 1200
 const VIEWBOX_HEIGHT = 220
 
-export default function FooterBouncyWave() {
+export default function FooterBouncyWave({ fill = 'white' }: { fill?: string }) {
   const pathRef = useRef<SVGPathElement | null>(null)
   const footerRef = useRef<HTMLDivElement | null>(null)
   const tweenRef = useRef<gsap.core.Tween | null>(null)
@@ -94,7 +94,7 @@ export default function FooterBouncyWave() {
         viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`}
         className="h-full w-full"
       >
-        <path ref={pathRef} fill="#F0EDE5" />
+        <path ref={pathRef} fill={fill} />
       </svg>
     </div>
   )

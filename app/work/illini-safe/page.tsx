@@ -20,7 +20,7 @@ const galleryImages = [
 
 export default function IlliniSafePage() {
   return (
-    <main className="flex-1 flex flex-col bg-[#F0EDE5] text-[#53232A]">
+    <main className="flex-1 flex flex-col bg-white text-[#53232A]">
       <Header />
 
       <div className="flex-grow px-6 md:px-12 lg:px-20 py-16 lg:py-24">

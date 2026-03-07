@@ -1,11 +1,11 @@
 import FooterBouncyWave from "./FooterBouncyWave"
 
-export default function Footer() {
+export default function Footer({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
   return (
     <footer id="contact" className="mt-16">
       {/* CTA Section */}
-      <div className="relative overflow-visible bg-[#53232A] rounded-t-3xl px-6 py-28">
-        <FooterBouncyWave />
+      <div className={`relative overflow-visible rounded-t-3xl px-6 py-28 ${variant === 'dark' ? 'bg-[#180E0E]' : 'bg-[#53232A]'}`}>
+        <FooterBouncyWave fill={variant === 'dark' ? '#180E0E' : 'white'} />
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
             <h2 className="text-5xl md:text-6xl font-bold text-white">Let&apos;s connect :)</h2>

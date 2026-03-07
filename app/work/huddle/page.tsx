@@ -2,7 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 export default function HuddlePage() {
   return (
-    <main className="flex-1 flex flex-col bg-[#F0EDE5] text-[#53232A]">
+    <main className="flex-1 flex flex-col bg-white text-[#53232A]">
       <Header />
 
       <div className="flex-grow px-6 md:px-12 lg:px-16 py-20 lg:py-28">
