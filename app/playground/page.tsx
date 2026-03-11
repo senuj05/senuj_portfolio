@@ -5,11 +5,32 @@ import Image from 'next/image'
 import Header from '@/components/Header'
 
 // ─── Grid config ─────────────────────────────────────────────────────────────
-const GRID_COLS = 6
-const GAP = 24
-const CARD_WIDTH = 200
-const CARD_HEIGHT = 260
+const GAP_DESKTOP = 24
+const CARD_WIDTH_DESKTOP = 200
+const CARD_HEIGHT_DESKTOP = 260
+const GAP_MOBILE = 16
+const CARD_WIDTH_MOBILE = 110
+const CARD_HEIGHT_MOBILE = 160
 const TOP_PADDING = 160
+
+function getInitialPositions(isMobile: boolean, viewportWidth?: number) {
+  const cols = isMobile ? 3 : 6
+  const gap = isMobile ? GAP_MOBILE : GAP_DESKTOP
+  const cardW = isMobile ? CARD_WIDTH_MOBILE : CARD_WIDTH_DESKTOP
+  const cardH = isMobile ? CARD_HEIGHT_MOBILE : CARD_HEIGHT_DESKTOP
+  const gridWidth = cols * cardW + (cols - 1) * gap
+  const leftOffset = isMobile && viewportWidth ? Math.max(0, (viewportWidth - gridWidth) / 2) : gap
+  const positions: { left: number; top: number }[] = []
+  for (let i = 0; i < COLLAGE_ITEMS.length; i++) {
+    const col = i % cols
+    const row = Math.floor(i / cols)
+    positions.push({
+      left: leftOffset + col * (cardW + gap),
+      top: TOP_PADDING + gap + row * (cardH + gap),
+    })
+  }
+  return positions
+}
 
 // ─── Image sources and captions (play folder only) ───────────────────────────
 const COLLAGE_ITEMS: { src: string; caption: string }[] = [
@@ -31,22 +52,34 @@ const COLLAGE_ITEMS: { src: string; caption: string }[] = [
   { src: '/play/vendingMachine.png', caption: 'A vending machine design or study.' },
 ]
 
-function getInitialPositions() {
-  const positions: { left: number; top: number }[] = []
-  for (let i = 0; i < COLLAGE_ITEMS.length; i++) {
-    const col = i % GRID_COLS
-    const row = Math.floor(i / GRID_COLS)
-    positions.push({
-      left: GAP + col * (CARD_WIDTH + GAP),
-      top: TOP_PADDING + GAP + row * (CARD_HEIGHT + GAP),
-    })
-  }
-  return positions
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)')
+    const update = () => setIsMobile(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+  return isMobile
+}
+
+function useWindowWidth() {
+  const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0)
+  useEffect(() => {
+    const update = () => setWidth(window.innerWidth)
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [])
+  return width
 }
 
 export default function PlaygroundPage() {
+  const isMobile = useIsMobile()
+  const windowWidth = useWindowWidth()
   const [canvasPosition, setCanvasPosition] = useState({ x: 0, y: 0 })
-  const [imagePositions, setImagePositions] = useState(getInitialPositions)
+  const [imagePositions, setImagePositions] = useState(() => getInitialPositions(false))
   const [lightboxImage, setLightboxImage] = useState<string | null>(null)
   const [isCanvasDragging, setIsCanvasDragging] = useState(false)
   const [draggingImageIndex, setDraggingImageIndex] = useState<number | null>(null)
@@ -139,6 +172,11 @@ export default function PlaygroundPage() {
     }
   }, [draggingImageIndex, handleImageMouseMove, handleImageMouseUp])
 
+  useEffect(() => {
+    setImagePositions(getInitialPositions(isMobile, windowWidth))
+  }, [isMobile, windowWidth])
+
+  const cardWidth = isMobile ? CARD_WIDTH_MOBILE : CARD_WIDTH_DESKTOP
   const isDragging = isCanvasDragging || draggingImageIndex !== null
 
   return (
@@ -151,7 +189,7 @@ export default function PlaygroundPage() {
 
       <button
         type="button"
-        onClick={() => setImagePositions(getInitialPositions())}
+        onClick={() => setImagePositions(getInitialPositions(isMobile, windowWidth))}
         className="fixed bottom-6 right-6 z-40 px-4 py-2 rounded-lg bg-gray-300 text-gray-700 text-sm special-elite-regular hover:bg-gray-400 transition-colors cursor-visible cursor-pointer"
       >
         Reset layout
@@ -185,7 +223,7 @@ export default function PlaygroundPage() {
                 style={{
                   left: `${left}px`,
                   top: `${top}px`,
-                  width: CARD_WIDTH,
+                  width: cardWidth,
                   zIndex: isDraggingThis ? 50 : 10,
                   cursor: isDraggingThis ? 'grabbing' : 'grab',
                 }}

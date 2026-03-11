@@ -11,7 +11,7 @@ const ICONS = [
     ),
   },
   {
-    href: 'mailto:',
+    href: 'mailto:senuvj@gmail.com',
     label: 'Email',
     svg: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
@@ -21,7 +21,7 @@ const ICONS = [
     ),
   },
   {
-    href: 'https://github.com',
+    href: 'https://github.com/senuj05',
     label: 'GitHub',
     svg: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">

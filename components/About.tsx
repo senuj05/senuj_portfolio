@@ -10,7 +10,7 @@ export default function About() {
         <div className="space-y-3 mt-6 md:mt-20">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#53232A] mb-1">Hi, there</h1>
           <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-500">
-            I am Senuvi and most of my friends call me Senu. I&apos;m a bit of everything: developer, designer, creative tech person, depending on what the problem needs.
+            I&apos;m Senuvi, many call me Senu. I&apos;m a bit of everything: developer, designer, creative tech person, depending on what the problem needs.
           </p>
           <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-500">
             I recently graduated from the University of Illinois Urbana-Champaign with a degree in Computer Science and Statistics, and right now I&apos;m a part-time UI/UX developer at Snapdrum.
@@ -25,7 +25,7 @@ export default function About() {
 
         {/* Three images - responsive sizing */}
         <div className="flex flex-wrap gap-2 md:gap-3 justify-center md:justify-end mt-4 md:mt-36">
-          <div className="relative w-20 h-32 sm:w-24 sm:h-40 md:w-44 md:h-64 flex-shrink-0 overflow-hidden rounded-lg">
+          <div className="relative w-40 h-60 sm:w-36 sm:h-54 md:w-44 md:h-64 flex-shrink-0 overflow-hidden rounded-lg">
             <Image
               src="/images/about1.png"
               alt="Senuvi Jayasinghe"
@@ -33,7 +33,7 @@ export default function About() {
               className="object-cover"
             />
           </div>
-          <div className="relative w-20 h-32 sm:w-24 sm:h-40 md:w-44 md:h-64 flex-shrink-0 overflow-hidden rounded-lg mt-4 md:mt-10">
+          <div className="relative w-40 h-60 sm:w-36 sm:h-54 md:w-44 md:h-64 flex-shrink-0 overflow-hidden rounded-lg mt-4 md:mt-10">
             <Image
               src="/images/abt2.jpg"
               alt="Senuvi Jayasinghe"
@@ -41,7 +41,7 @@ export default function About() {
               className="object-cover"
             />
           </div>
-          <div className="relative w-20 h-32 sm:w-24 sm:h-40 md:w-44 md:h-64 flex-shrink-0 overflow-hidden rounded-lg">
+          <div className="relative w-40 h-60 sm:w-36 sm:h-54 md:w-44 md:h-64 flex-shrink-0 overflow-hidden rounded-lg">
             <Image
               src="/images/abt3.JPG"
               alt="Senuvi Jayasinghe"

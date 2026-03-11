@@ -32,7 +32,7 @@ export default function FilmsArt() {
         <p className="text-sm md:text-base text-[#755656] mt-2">Some of my favorite shots :)</p>
       </div>
 
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 max-w-5xl mx-auto space-y-6">
+      <div className="columns-2 sm:columns-2 lg:columns-3 gap-6 max-w-5xl mx-auto space-y-6">
         {galleryItems.map((item) => (
           <div
             key={item.id}
@@ -53,7 +53,7 @@ export default function FilmsArt() {
                 alt={item.title}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 50vw, 33vw"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, (max-width: 1280px) 50vw, 33vw"
               />
             </div>
           </div>

@@ -36,6 +36,16 @@ export default function CursorDot() {
         visible = true
         dot.style.opacity = "1"
       }
+      const el = document.elementFromPoint(targetX, targetY)
+      const footer = document.getElementById("contact")
+      const isOverFooter = footer && (el === footer || footer.contains(el))
+      if (isOverFooter) {
+        dot.style.backgroundColor = "white"
+        dot.style.boxShadow = "0 0 0 2px #53232A"
+      } else {
+        dot.style.backgroundColor = "#53232A"
+        dot.style.boxShadow = "0 0 0 2px white"
+      }
     }
 
     const onLeave = () => {
@@ -59,7 +69,8 @@ export default function CursorDot() {
   return (
     <div
       ref={dotRef}
-      className="pointer-events-none fixed left-0 top-0 z-50 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#53232A] opacity-0 transition-opacity duration-150"
+      className="pointer-events-none fixed left-0 top-0 z-50 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 transition-opacity duration-150"
+      style={{ backgroundColor: "#53232A", boxShadow: "0 0 0 2px white" }}
     />
   )
 }
