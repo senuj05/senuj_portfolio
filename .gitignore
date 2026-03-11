@@ -31,6 +31,17 @@ yarn-error.log*
 # vercel
 .vercel
 
+# large media files (over 50MB - GitHub limit)
+public/images/fullcwh*
+public/images/cwh 2.MOV
+public/images/cwh-hero 2.mov
+public/images/cardswhearts 2.mov
+public/images/cardswithhearts 2.mov
+public/images/chicago 2.MOV
+public/images/cwh_cards 2.mov
+public/images/cwh_mission 2.mov
+public/images/Dream 16.MOV
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
