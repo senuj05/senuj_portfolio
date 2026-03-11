@@ -87,18 +87,22 @@ export default function PlaygroundPage() {
   const canvasPositionStart = useRef({ x: 0, y: 0 })
   const imageDragStart = useRef({ x: 0, y: 0, left: 0, top: 0 })
   const hasMoved = useRef(false)
+  const isCanvasDraggingRef = useRef(false)
+  const draggingImageIndexRef = useRef<number | null>(null)
 
-  // Canvas pan (drag on empty space)
-  const handleCanvasMouseDown = useCallback((e: React.MouseEvent) => {
+  // Canvas pan (drag on empty space) - uses Pointer Events for reliable touch support
+  const handleCanvasPointerDown = useCallback((e: React.PointerEvent) => {
     if ((e.target as HTMLElement).closest('[data-draggable-card]')) return
     hasMoved.current = false
+    isCanvasDraggingRef.current = true
     setIsCanvasDragging(true)
     canvasDragStart.current = { x: e.clientX, y: e.clientY }
     canvasPositionStart.current = { x: canvasPosition.x, y: canvasPosition.y }
+    ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
   }, [canvasPosition.x, canvasPosition.y])
 
-  const handleCanvasMouseMove = useCallback((e: MouseEvent) => {
-    if (!isCanvasDragging) return
+  const handleCanvasPointerMove = useCallback((e: React.PointerEvent) => {
+    if (!isCanvasDraggingRef.current) return
     const dx = e.clientX - canvasDragStart.current.x
     const dy = e.clientY - canvasDragStart.current.y
     if (Math.abs(dx) > 3 || Math.abs(dy) > 3) hasMoved.current = true
@@ -106,16 +110,18 @@ export default function PlaygroundPage() {
       x: canvasPositionStart.current.x + dx,
       y: canvasPositionStart.current.y + dy,
     })
-  }, [isCanvasDragging])
+  }, [])
 
-  const handleCanvasMouseUp = useCallback(() => {
+  const handleCanvasPointerUp = useCallback(() => {
+    isCanvasDraggingRef.current = false
     setIsCanvasDragging(false)
     hasMoved.current = false
   }, [])
 
-  // Image drag
-  const handleImageMouseDown = useCallback((e: React.MouseEvent, index: number) => {
+  // Image drag - uses Pointer Events with setPointerCapture for reliable touch
+  const handleImagePointerDown = useCallback((e: React.PointerEvent, index: number) => {
     e.stopPropagation()
+    draggingImageIndexRef.current = index
     setDraggingImageIndex(index)
     hasMoved.current = false
     imageDragStart.current = {
@@ -124,53 +130,35 @@ export default function PlaygroundPage() {
       left: imagePositions[index].left,
       top: imagePositions[index].top,
     }
+    ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
   }, [imagePositions])
 
-  const handleImageMouseMove = useCallback((e: MouseEvent) => {
-    if (draggingImageIndex === null) return
+  const handleImagePointerMove = useCallback((e: React.PointerEvent) => {
+    const idx = draggingImageIndexRef.current
+    if (idx === null) return
     const dx = e.clientX - imageDragStart.current.x
     const dy = e.clientY - imageDragStart.current.y
     if (Math.abs(dx) > 3 || Math.abs(dy) > 3) hasMoved.current = true
     setImagePositions((prev) => {
       const next = [...prev]
-      next[draggingImageIndex] = {
+      next[idx] = {
         left: imageDragStart.current.left + dx,
         top: imageDragStart.current.top + dy,
       }
       return next
     })
-  }, [draggingImageIndex])
+  }, [])
 
-  const handleImageMouseUp = useCallback((index: number) => {
-    if (draggingImageIndex === index) {
+  const handleImagePointerUp = useCallback((e: React.PointerEvent, index: number) => {
+    ;(e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId)
+    if (draggingImageIndexRef.current === index) {
       if (!hasMoved.current) {
         setLightboxImage(COLLAGE_ITEMS[index].src)
       }
+      draggingImageIndexRef.current = null
       setDraggingImageIndex(null)
     }
-  }, [draggingImageIndex])
-
-  useEffect(() => {
-    if (!isCanvasDragging) return
-    window.addEventListener('mousemove', handleCanvasMouseMove)
-    window.addEventListener('mouseup', handleCanvasMouseUp)
-    return () => {
-      window.removeEventListener('mousemove', handleCanvasMouseMove)
-      window.removeEventListener('mouseup', handleCanvasMouseUp)
-    }
-  }, [isCanvasDragging, handleCanvasMouseMove, handleCanvasMouseUp])
-
-  useEffect(() => {
-    if (draggingImageIndex === null) return
-    const handleMove = (e: MouseEvent) => handleImageMouseMove(e)
-    const handleUp = () => handleImageMouseUp(draggingImageIndex)
-    window.addEventListener('mousemove', handleMove)
-    window.addEventListener('mouseup', handleUp)
-    return () => {
-      window.removeEventListener('mousemove', handleMove)
-      window.removeEventListener('mouseup', handleUp)
-    }
-  }, [draggingImageIndex, handleImageMouseMove, handleImageMouseUp])
+  }, [])
 
   useEffect(() => {
     setImagePositions(getInitialPositions(isMobile, windowWidth))
@@ -179,12 +167,15 @@ export default function PlaygroundPage() {
   const cardWidth = isMobile ? CARD_WIDTH_MOBILE : CARD_WIDTH_DESKTOP
   const isDragging = isCanvasDragging || draggingImageIndex !== null
 
+  // On mobile: scrollable content height (6 rows of cards + padding)
+  const mobileContentHeight = TOP_PADDING + GAP_MOBILE + 6 * (CARD_HEIGHT_MOBILE + GAP_MOBILE) + 120
+
   return (
     <main className="min-h-screen flex flex-col bg-white text-gray-900 overflow-hidden">
       <Header variant="light" />
 
       <p className="fixed left-1/2 top-36 -translate-x-1/2 z-40 special-elite-regular text-gray-400 text-sm md:text-base pointer-events-none">
-        Drag to play
+        {isMobile ? 'Drag cards or scroll to explore' : 'Drag to play'}
       </p>
 
       <button
@@ -196,20 +187,38 @@ export default function PlaygroundPage() {
       </button>
 
       <div
-        className="flex-1 relative overflow-hidden pt-32 md:pt-40"
-        onMouseDown={handleCanvasMouseDown}
-        style={{ cursor: isCanvasDragging ? 'grabbing' : draggingImageIndex !== null ? 'grabbing' : 'grab' }}
+        className={`flex-1 relative pt-32 md:pt-40 ${isMobile ? 'overflow-y-auto overflow-x-hidden' : 'overflow-hidden'}`}
+        style={{
+          touchAction: isMobile ? 'pan-y' : 'none',
+          WebkitOverflowScrolling: 'touch',
+          cursor: isMobile ? 'default' : (isCanvasDragging ? 'grabbing' : draggingImageIndex !== null ? 'grabbing' : 'grab'),
+        }}
+        onPointerDown={isMobile ? undefined : handleCanvasPointerDown}
+        onPointerMove={isMobile ? undefined : handleCanvasPointerMove}
+        onPointerUp={isMobile ? undefined : handleCanvasPointerUp}
+        onPointerLeave={isMobile ? undefined : handleCanvasPointerUp}
+        onPointerCancel={isMobile ? undefined : handleCanvasPointerUp}
       >
-        {/* Large draggable canvas */}
+        {/* Large draggable canvas - on mobile: natural size for scrolling; on desktop: pannable */}
         <div
           className="absolute bg-white"
-          style={{
-            left: 0,
-            top: 0,
-            width: '200vw',
-            height: '200vh',
-            transform: `translate(${canvasPosition.x}px, ${canvasPosition.y}px)`,
-          }}
+          style={
+            isMobile
+              ? {
+                  left: 0,
+                  top: 0,
+                  width: '100%',
+                  minWidth: Math.max(windowWidth || 375, 375),
+                  minHeight: mobileContentHeight,
+                }
+              : {
+                  left: 0,
+                  top: 0,
+                  width: '200vw',
+                  height: '200vh',
+                  transform: `translate(${canvasPosition.x}px, ${canvasPosition.y}px)`,
+                }
+          }
         >
           {COLLAGE_ITEMS.map((item, i) => {
             const number = String(i + 1).padStart(2, '0')
@@ -226,8 +235,13 @@ export default function PlaygroundPage() {
                   width: cardWidth,
                   zIndex: isDraggingThis ? 50 : 10,
                   cursor: isDraggingThis ? 'grabbing' : 'grab',
+                  touchAction: 'none',
                 }}
-                onMouseDown={(e) => handleImageMouseDown(e, i)}
+                onPointerDown={(e) => handleImagePointerDown(e, i)}
+                onPointerMove={handleImagePointerMove}
+                onPointerUp={(e) => handleImagePointerUp(e, i)}
+                onPointerLeave={(e) => handleImagePointerUp(e, i)}
+                onPointerCancel={(e) => handleImagePointerUp(e, i)}
               >
                 <div className="w-full aspect-square flex items-center justify-center overflow-hidden rounded-md mb-3 bg-white/80 rounded-lg shadow-sm">
                   <Image
