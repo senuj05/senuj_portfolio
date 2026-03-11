@@ -23,50 +23,50 @@ export default function Header({ variant = 'light' }: { variant?: 'light' | 'dar
 
   const menuItems = [
     { number: '01', label: 'Home', href: '/' },
-    { number: '02', label: 'About', href: '/about' },
-    { number: '03', label: 'Work', href: '/work' },
-    { number: '04', label: 'Play', href: '/playground' },
+    { number: '02', label: 'Work', href: '/work' },
+    { number: '03', label: 'Play', href: '/playground' },
+    { number: '04', label: 'About', href: '/about' },
     { number: '05', label: 'Gallery', href: '/films' },
   ]
 
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 cursor-visible ${variant === 'dark' ? 'bg-[#180E0E] border-b border-white/10' : 'bg-white border-b border-gray-200'}`}>
-        <div className="px-6 md:px-12 lg:px-24 py-8 flex items-center justify-between">
+        <div className="px-6 md:px-12 lg:px-24 py-8 flex items-center justify-between w-full relative">
           {/* Left Side - Logo and Brand */}
-          <div className="flex items-center gap-3">
-            <div className={`w-8 h-8 rounded-full flex-shrink-0 ${variant === 'dark' ? 'bg-white/90' : 'bg-[#53232A]'}`}></div>
-            <Link href="/" className={`text-lg font-semibold transition-colors ${variant === 'dark' ? 'text-white hover:text-white/80' : 'text-gray-900 hover:text-gray-700'}`}>
+          <Link href="/" className="flex items-center gap-3 font-sf-pro flex-shrink-0">
+            <div className={`w-6 h-6 rounded-full flex-shrink-0 ${variant === 'dark' ? 'bg-white/90' : 'bg-[#53232A]'}`}></div>
+            <span className={`text-lg font-normal transition-colors ${variant === 'dark' ? 'text-white hover:text-white/80' : 'text-gray-900 hover:text-gray-700'}`}>
               Senu.j
-            </Link>
-          </div>
+            </span>
+          </Link>
 
-          {/* Center - Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="/work" className={`text-base md:text-lg font-normal transition-colors ${variant === 'dark' ? `text-white/60 hover:text-white ${pathname === '/work' ? 'text-white' : ''}` : `text-gray-500 hover:text-gray-900 ${pathname === '/work' ? 'text-gray-900' : ''}`}`}>
+          {/* Center - Navigation Links (desktop only) */}
+          <nav className="hidden md:flex items-center justify-center gap-6 font-sf-pro font-normal absolute left-1/2 -translate-x-1/2">
+            <Link href="/work" className={`font-sf-pro text-base md:text-lg font-normal transition-colors ${variant === 'dark' ? `text-white/60 hover:text-white ${pathname === '/work' ? 'text-white' : ''}` : `text-gray-500 hover:text-gray-900 ${pathname === '/work' ? 'text-gray-900' : ''}`}`}>
               Work
             </Link>
-            <Link href="/playground" className={`text-base md:text-lg font-normal transition-colors ${variant === 'dark' ? `text-white/60 hover:text-white ${pathname === '/playground' ? 'text-white' : ''}` : `text-gray-500 hover:text-gray-900 ${pathname === '/playground' ? 'text-gray-900' : ''}`}`}>
+            <Link href="/playground" className={`font-sf-pro text-base md:text-lg font-normal transition-colors ${variant === 'dark' ? `text-white/60 hover:text-white ${pathname === '/playground' ? 'text-white' : ''}` : `text-gray-500 hover:text-gray-900 ${pathname === '/playground' ? 'text-gray-900' : ''}`}`}>
               Play
             </Link>
-            <Link href="/about" className={`text-base md:text-lg font-normal transition-colors ${variant === 'dark' ? `text-white/60 hover:text-white ${pathname === '/about' ? 'text-white' : ''}` : `text-gray-500 hover:text-gray-900 ${pathname === '/about' ? 'text-gray-900' : ''}`}`}>
+            <Link href="/about" className={`font-sf-pro text-base md:text-lg font-normal transition-colors ${variant === 'dark' ? `text-white/60 hover:text-white ${pathname === '/about' ? 'text-white' : ''}` : `text-gray-500 hover:text-gray-900 ${pathname === '/about' ? 'text-gray-900' : ''}`}`}>
               About
             </Link>
-            <Link href="/films" className={`text-base md:text-lg font-normal transition-colors ${variant === 'dark' ? `text-white/60 hover:text-white ${pathname === '/films' ? 'text-white' : ''}` : `text-gray-500 hover:text-gray-900 ${pathname === '/films' ? 'text-gray-900' : ''}`}`}>
+            <Link href="/films" className={`font-sf-pro text-base md:text-lg font-normal transition-colors ${variant === 'dark' ? `text-white/60 hover:text-white ${pathname === '/films' ? 'text-white' : ''}` : `text-gray-500 hover:text-gray-900 ${pathname === '/films' ? 'text-gray-900' : ''}`}`}>
               Gallery
             </Link>
           </nav>
 
-          {/* Right Side - Mobile Menu Button */}
-          <div className="flex items-center">
+          {/* Right Side - Menu Button */}
+          <div className="flex items-center justify-end flex-shrink-0">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden flex flex-col gap-1.5"
+              className="flex flex-col gap-1.5"
               aria-label="Toggle menu"
             >
-              <span className={`w-6 h-0.5 transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''} ${variant === 'dark' ? 'bg-white' : 'bg-gray-900'}`}></span>
-              <span className={`w-6 h-0.5 transition-all ${menuOpen ? 'opacity-0' : ''} ${variant === 'dark' ? 'bg-white' : 'bg-gray-900'}`}></span>
-              <span className={`w-6 h-0.5 transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''} ${variant === 'dark' ? 'bg-white' : 'bg-gray-900'}`}></span>
+              <span className={`w-16 h-px transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''} ${variant === 'dark' ? 'bg-white' : 'bg-gray-900'}`}></span>
+              <span className={`w-16 h-px transition-all ${menuOpen ? 'opacity-0' : ''} ${variant === 'dark' ? 'bg-white' : 'bg-gray-900'}`}></span>
+              <span className={`w-16 h-px transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''} ${variant === 'dark' ? 'bg-white' : 'bg-gray-900'}`}></span>
             </button>
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function Header({ variant = 'light' }: { variant?: 'light' | 'dar
             </div>
 
             {/* Menu Items */}
-            <nav className="flex-1 flex flex-col pt-12 px-6">
+            <nav className="flex-1 flex flex-col pt-12 px-6 font-sf-pro">
               {menuItems.map((item, index) => (
                 <div key={item.number}>
                   <Link
@@ -109,7 +109,7 @@ export default function Header({ variant = 'light' }: { variant?: 'light' | 'dar
                   >
                     <div className="flex items-center gap-4">
                       <span className={`text-sm font-medium w-8 ${variant === 'dark' ? 'text-white/50' : 'text-gray-400'}`}>{item.number}</span>
-                      <span className={`text-3xl md:text-4xl font-normal transition-colors ${variant === 'dark' ? 'text-white group-hover:text-white/80' : 'text-gray-900 group-hover:text-gray-600'}`}>
+                      <span className={`font-sf-pro text-3xl md:text-4xl font-normal transition-colors ${variant === 'dark' ? 'text-white group-hover:text-white/80' : 'text-gray-900 group-hover:text-gray-600'}`}>
                         {item.label}
                       </span>
                     </div>

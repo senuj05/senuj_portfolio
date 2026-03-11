@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function ProjectThumbnails() {
+export default function ProjectThumbnails({ embedded = false }: { embedded?: boolean }) {
   const thumbnails = [
     { id: 1, type: 'rect', bg: 'bg-blue-50', content: 'Water', colSpan: 'col-span-1', rowSpan: 'row-span-1', image: '/images/landscape.JPG', video: null, href: '/films' },
     { id: 2, type: 'rect-large', bg: 'bg-blue-50', content: 'Dream 15', colSpan: 'md:col-span-1.2', rowSpan: 'md:row-span-0.5', image: null, video: '/images/Dream 15.MOV', href: '/films' },
@@ -21,8 +21,8 @@ export default function ProjectThumbnails() {
   }
 
   return (
-    <section className="pt-8 pb-4 px-10 md:px-20 lg:px-28 xl:px-36">
-      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-4 lg:gap-6 relative">
+    <section className={embedded ? 'pt-4 pb-2' : 'pt-8 pb-4 px-6 md:px-12 lg:px-24'}>
+      <div className={`grid grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-4 lg:gap-6 relative ${embedded ? '' : 'max-w-6xl mx-auto'}`}>
         {thumbnails.map((thumb) => {
           const cardClasses = `
             ${thumb.type === 'circle' ? 'rounded-full aspect-square overflow-hidden' : 'rounded-2xl overflow-hidden'}

@@ -26,8 +26,8 @@ export default function FilmsArt() {
   ]
 
   return (
-    <section className="pt-24 pb-20 px-6 md:px-10 lg:px-14 xl:px-16">
-      <div className="mt-10 mb-8 animate-fade-in max-w-5xl mx-auto">
+    <section className="pt-16 pb-20 px-6 md:px-12 lg:px-24">
+      <div className="mt-4 mb-8 animate-fade-in max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-[#53232A]">Gallery</h2>
         <p className="text-sm md:text-base text-[#755656] mt-2">Some of my favorite shots :)</p>
       </div>

@@ -152,7 +152,7 @@ export default function PlaygroundPage() {
       <button
         type="button"
         onClick={() => setImagePositions(getInitialPositions())}
-        className="fixed bottom-6 left-6 z-40 px-4 py-2 rounded-lg bg-gray-300 text-gray-700 text-sm special-elite-regular hover:bg-gray-400 transition-colors cursor-visible cursor-pointer"
+        className="fixed bottom-6 right-6 z-40 px-4 py-2 rounded-lg bg-gray-300 text-gray-700 text-sm special-elite-regular hover:bg-gray-400 transition-colors cursor-visible cursor-pointer"
       >
         Reset layout
       </button>

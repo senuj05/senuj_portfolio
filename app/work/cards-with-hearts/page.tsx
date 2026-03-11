@@ -13,7 +13,7 @@ export default function CardsWithHeartsPage() {
     <main className="flex-1 flex flex-col bg-white text-[#53232A]">
       <Header />
 
-      <div className="flex-grow px-6 md:px-12 lg:px-16 py-10 lg:py-16">
+      <div className="flex-grow px-6 md:px-12 lg:px-24 py-10 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-[200px_minmax(0,1fr)] gap-8 lg:gap-14">
           <div className="hidden lg:block">
             <aside
@@ -101,8 +101,10 @@ export default function CardsWithHeartsPage() {
         </div>
       </div>
 
-      <div className="px-6 md:px-12 lg:px-16 pb-10">
-        <div className="border-t border-[#53232A]/30 pt-6 text-center text-2xl md:text-3xl italic text-[#53232A]"></div>
+      <div className="px-6 md:px-12 lg:px-24 pb-10">
+        <div className="border-t border-[#53232A]/30 pt-6 text-center text-2xl md:text-3xl italic text-[#53232A]">
+          Full case study coming soon
+        </div>
       </div>
 
       <Footer />

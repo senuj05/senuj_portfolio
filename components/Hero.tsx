@@ -27,11 +27,11 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="pt-32 pb-8 px-10 md:px-20 lg:px-28 xl:px-36">
+    <section className="pt-32 pb-8 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto">
         <h1
           ref={headingRef}
-          className="text-5xl md:text-6xl font-bold tracking-tight text-[#53232A] text-left"
+          className="text-5xl md:text-6xl font-bold tracking-tight text-[#53232A] text-left font-sf-pro"
           style={{ opacity: 1 }}
         >
           Senuvi Jayasinghe.

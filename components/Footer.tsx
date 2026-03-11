@@ -2,13 +2,13 @@ import FooterBouncyWave from "./FooterBouncyWave"
 
 export default function Footer({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
   return (
-    <footer id="contact" className="mt-16">
+    <footer id="contact" className="mt-0">
       {/* CTA Section */}
-      <div className={`relative overflow-visible rounded-t-3xl px-6 py-28 ${variant === 'dark' ? 'bg-[#180E0E]' : 'bg-[#53232A]'}`}>
+      <div className={`relative overflow-visible rounded-t-3xl px-6 md:px-12 lg:px-24 py-16 md:py-20 ${variant === 'dark' ? 'bg-[#180E0E]' : 'bg-[#53232A]'}`}>
         <FooterBouncyWave fill={variant === 'dark' ? '#180E0E' : 'white'} />
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
-            <h2 className="text-5xl md:text-6xl font-bold text-white">Let&apos;s connect :)</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">Let&apos;s connect :)</h2>
             <a
               href="https://www.linkedin.com/in/senuvi/"
               target="_blank"
@@ -27,7 +27,7 @@ export default function Footer({ variant = 'light' }: { variant?: 'light' | 'dar
             </a>
           </div>
           <p className="text-white/90 text-sm">This website is best viewed on Laptop</p>
-          <p className="text-white/90 text-sm mt-12">© 2025 Senuvi Jayasinghe</p>
+          <p className="text-white/90 text-sm mt-10">© 2025 Senuvi Jayasinghe</p>
         </div>
       </div>
 

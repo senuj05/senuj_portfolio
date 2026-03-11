@@ -6,7 +6,7 @@ export default function WorkPage() {
   return (
     <main className="min-h-screen flex flex-col bg-white text-[#53232A]">
       <Header />
-      <div className="flex-grow pt-24">
+      <div className="flex-grow pt-20">
         <UXProjects />
       </div>
       <Footer />
