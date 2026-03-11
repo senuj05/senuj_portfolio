@@ -61,6 +61,34 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 └── public/             # Static assets
 ```
 
+## Pages
+
+### Home
+The main landing page featuring a hero section, featured projects, and portfolio highlights.
+
+### About
+An about page with personal information and background details.
+
+### Work
+Showcase of completed projects and case studies, including:
+- **Cards with Hearts** - Interactive project with sidebar navigation
+- **Huddle** - Project with detailed layout
+- **Illini Safe** - Safety-focused project
+- **Master Chef** - Culinary design project
+- **Refabric** - Sustainable fashion initiative
+- **Smart Resume Matcher** - AI-powered resume matching tool
+
+### Play (Playground)
+An interactive, draggable canvas gallery featuring a collection of creative work, sketches, and visual experiments. The page includes:
+- **Draggable card-based layout** - Users can click and drag image cards around the canvas
+- **Grid-based initial positioning** - Cards are arranged in a responsive grid layout
+- **Lightbox functionality** - Click images to view full-screen with captions
+- **Smooth animations** - Interactive hover effects and transitions
+- **Caption system** - Each image has a descriptive caption visible in the lightbox
+
+### Films
+A dedicated section for film and art projects.
+
 ## Customization
 
 You can customize the content by editing the component files in the `components/` directory. Each component contains placeholder data that you can replace with your own content.
