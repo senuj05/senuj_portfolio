@@ -74,7 +74,7 @@ export default function Header({ variant = 'light' }: { variant?: 'light' | 'dar
 
       {/* Full-Screen Overlay Menu */}
       {menuOpen && (
-        <div className={`fixed inset-0 z-40 cursor-visible ${variant === 'dark' ? 'bg-[#180E0E]' : 'bg-white'}`}>
+        <div className={`fixed inset-0 z-[60] cursor-visible ${variant === 'dark' ? 'bg-[#180E0E]' : 'bg-white'}`}>
           <div className="h-full flex flex-col">
             {/* Top Bar with Logo and Close Button */}
             <div className="flex justify-between items-center px-6 pt-6 pb-6">
