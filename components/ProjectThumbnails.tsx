@@ -3,12 +3,12 @@ import Link from 'next/link'
 
 export default function ProjectThumbnails({ embedded = false }: { embedded?: boolean }) {
   const thumbnails = [
-    { id: 1, type: 'rect', bg: 'bg-blue-50', content: 'Water', colSpan: 'col-span-1', rowSpan: 'row-span-1', image: '/images/landscape.JPG', video: null, href: '/films' },
-    { id: 2, type: 'rect-large', bg: 'bg-blue-50', content: 'Dream 15', colSpan: 'md:col-span-1.2', rowSpan: 'md:row-span-0.5', image: null, video: '/images/Dream 15.MOV', href: '/films' },
-    { id: 8, type: 'circle', bg: 'bg-yellow-500', content: 'Senu', colSpan: 'col-span-1', rowSpan: 'row-span-1', image: '/images/senu.png', video: null, href: '/about' },
-    { id: 3, type: 'rect', bg: 'bg-gray-900', content: 'Huddle', colSpan: 'col-span-1', rowSpan: 'row-span-1', image: '/images/Huddle_.png', video: null, href: '/work/cards-with-hearts' },
-    { id: 4, type: 'rect', bg: 'bg-orange-100', content: 'Studio Ghibli', colSpan: 'col-span-1', rowSpan: 'row-span-1', image: '/images/ghilbi .gif', video: null, href: '/films' },
-    { id: 5, type: 'rect', bg: 'bg-green-100', content: 'Smart Resume', colSpan: 'col-span-1', rowSpan: 'row-span-1', image: '/images/refabric.png', video: null, href: '/work' }
+    { id: 1, type: 'rect', bg: 'bg-blue-50', content: 'Water', colSpan: 'col-span-1', rowSpan: 'row-span-1', image: '/images/landscape.JPG', video: null, href: '/films', contain: false },
+    { id: 2, type: 'rect-large', bg: 'bg-blue-50', content: 'Dream 15', colSpan: 'md:col-span-1.2', rowSpan: 'md:row-span-0.5', image: null, video: '/images/Dream 15.MOV', href: '/films', contain: false },
+    { id: 8, type: 'circle', bg: 'bg-yellow-500', content: 'Senu', colSpan: 'col-span-1', rowSpan: 'row-span-1', image: '/images/senu.png', video: null, href: '/about', contain: false },
+    { id: 3, type: 'rect', bg: 'bg-gray-900', content: 'Huddle', colSpan: 'col-span-1', rowSpan: 'row-span-1', image: '/images/Huddle_.png', video: null, href: '/work/cards-with-hearts', contain: false },
+    { id: 4, type: 'rect', bg: 'bg-orange-100', content: 'Studio Ghibli', colSpan: 'col-span-1', rowSpan: 'row-span-1', image: '/images/ghilbi .gif', video: null, href: '/films', contain: false },
+    { id: 5, type: 'rect', bg: 'bg-green-100', content: 'Smart Resume', colSpan: 'col-span-1', rowSpan: 'row-span-1', image: '/images/refabric.png', video: null, href: '/work', contain: true }
   ]
 
   const positions: Record<number, string> = {
@@ -31,7 +31,7 @@ export default function ProjectThumbnails({ embedded = false }: { embedded?: boo
             ${positions[thumb.id] ?? ''}
             ${thumb.id === 5 ? 'border border-black' : ''}
             flex items-center justify-center
-            hover:scale-[1.02] transition-transform duration-300 cursor-pointer
+            hover:scale-[1.02] transition-transform duration-500 cursor-pointer
             ${thumb.type === 'rect-large' ? 'h-[90px] md:h-[200px]' : 'h-[90px] md:h-[200px]'}
             relative
             block
@@ -51,7 +51,7 @@ export default function ProjectThumbnails({ embedded = false }: { embedded?: boo
               src={thumb.image}
               alt={thumb.content}
               fill
-              className={`object-cover ${thumb.id === 8 ? 'shake-head' : ''}`}
+              className={`${thumb.contain ? 'object-contain' : 'object-cover'} ${thumb.id === 8 ? 'shake-head' : ''}`}
               sizes="(max-width: 768px) 50vw, 25vw"
             />
           ) : (

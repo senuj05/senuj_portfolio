@@ -1,8 +1,24 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+type Project = {
+  id: number
+  brand: string
+  title: string
+  subtitle: string
+  tags: string[]
+  description: string
+  imageBg: string
+  href?: string
+  image?: string
+  video?: string
+  contain?: boolean
+  comingSoon?: boolean
+  imageScale?: number
+}
+
 export default function UXProjects() {
-  const projects = [
+  const projects: Project[] = [
     {
       id: 7,
       brand: 'snapdrum',
@@ -152,7 +168,7 @@ export default function UXProjects() {
               </div>
             </div>
           ) : (
-            <Link key={project.id} href={project.href} className={cardClassName}>
+            <Link key={project.id} href={project.href!} className={cardClassName}>
               {/* Image Section */}
               <div
                 className="p-4 sm:p-6 md:p-8 flex flex-col items-start justify-start min-h-[260px] sm:min-h-[320px] md:min-h-[400px] relative flex-shrink-0"
