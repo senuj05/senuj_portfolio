@@ -86,8 +86,8 @@ An interactive, draggable canvas gallery featuring a collection of creative work
 - **Smooth animations** - Interactive hover effects and transitions
 - **Caption system** - Each image has a descriptive caption visible in the lightbox
 
-### Films
-A dedicated section for film and art projects.
+### Gallery
+A dedicated section for photography
 
 ## Customization
 
