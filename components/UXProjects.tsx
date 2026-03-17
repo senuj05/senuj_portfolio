@@ -98,7 +98,7 @@ export default function UXProjects() {
 
   return (
     <div className="min-h-screen bg-white pt-20 pb-20 px-4 sm:px-6 md:px-8 flex items-center justify-center">
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-[1200px] w-full items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-[1200px] w-full items-stretch">
         {projects.map((project) => {
           const cardClassName = 'group flex flex-col rounded-lg overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-300 bg-[#1a1a1a]' + (project.comingSoon ? ' relative cursor-default' : '')
 
