@@ -22,7 +22,7 @@ export default function CardsWithHeartsPage() {
       <HomeHeader />
 
       {/* Hero Video Section */}
-      <div className="w-full px-4 pt-24 pb-16 md:pt-28 md:pb-20">
+      <div className="w-full px-6 md:px-8 pt-20 pb-12 md:pt-28 md:pb-20">
         <div className="max-w-6xl mx-auto">
           <div className="rounded-lg overflow-hidden">
             <video
@@ -40,15 +40,15 @@ export default function CardsWithHeartsPage() {
       </div>
 
       {/* Main Content Section */}
-      <div className="max-w-6xl mx-auto px-4 pb-8">
-        <div className="grid md:grid-cols-2 gap-12 mb-8">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 pb-8">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-8">
           {/* Left Column - Headline & Project Details */}
           <div>
-            <h1 className={`text-5xl md:text-[64px] leading-[1.1] tracking-tight ${chelseaMarket.className}`}>
+            <h1 className={`text-4xl sm:text-5xl md:text-[64px] leading-[1.1] tracking-tight ${chelseaMarket.className}`}>
               Cards with Hearts
             </h1>
 
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
               <div>
                 <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">Role</p>
                 <p className="text-[15px] leading-relaxed text-gray-700">Product Designer & Developer</p>
@@ -66,7 +66,7 @@ export default function CardsWithHeartsPage() {
 
           {/* Right Column - Description, Tags, and CTA */}
           <div className="flex flex-col">
-            <p className="text-[17px] leading-relaxed text-gray-700 mb-6">
+            <p className="text-[15px] sm:text-[17px] leading-relaxed text-gray-700 mb-6">
               A platform connecting people worldwide with children in Sri Lankan hospitals through
               handmade cards filled with hope. I designed and built a platform where anyone can send
               encouraging messages to children in hospitals.
@@ -98,21 +98,21 @@ export default function CardsWithHeartsPage() {
       </div>
 
       {/* Impact Section */}
-      <div className="bg-white pt-8 pb-20">
-        <div className="max-w-6xl mx-auto px-4 border-t border-gray-200 pt-8">
-          <p className="text-xs uppercase tracking-wider text-gray-500 mb-12 ">Impact</p>
+      <div className="bg-white pt-6 pb-12 md:pt-8 md:pb-20">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 border-t border-gray-200 pt-6 md:pt-8">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-8 md:mb-12">Impact</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8">
             <div className="text-center">
-              <p className={`text-5xl md:text-6xl font-bold text-[#53232A] mb-2 ${chelseaMarket.className}`}>500+</p>
+              <p className={`text-4xl sm:text-5xl md:text-6xl font-bold text-[#53232A] mb-2 ${chelseaMarket.className}`}>500+</p>
               <p className="text-sm text-gray-500">cards sent to children in hospitals</p>
             </div>
             <div className="text-center">
-              <p className={`text-5xl md:text-6xl font-bold text-[#53232A] mb-2 ${chelseaMarket.className}`}>1+</p>
+              <p className={`text-4xl sm:text-5xl md:text-6xl font-bold text-[#53232A] mb-2 ${chelseaMarket.className}`}>1+</p>
               <p className="text-sm text-gray-500">hospitals partnered across Sri Lanka</p>
             </div>
             <div className="text-center">
-              <p className={`text-5xl md:text-6xl font-bold text-[#53232A] mb-2 ${chelseaMarket.className}`}>4+</p>
+              <p className={`text-4xl sm:text-5xl md:text-6xl font-bold text-[#53232A] mb-2 ${chelseaMarket.className}`}>4+</p>
               <p className="text-sm text-gray-500">countries contributing cards worldwide</p>
             </div>
           </div>
@@ -120,17 +120,17 @@ export default function CardsWithHeartsPage() {
       </div>
 
       {/* Context Section */}
-      <div className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500 mb-12 ">Context</p>
+      <div className="bg-white py-12 md:py-20">
+        <div className="max-w-6xl mx-auto px-6 md:px-8">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-8 md:mb-12">Context</p>
 
-          <div className="text-center mb-6">
-            <h2 className={`text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
+          <div className="text-center mb-4 md:mb-6">
+            <h2 className={`text-2xl sm:text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
               Spreading Hope, <em className="text-[#7D6E61] italic">One Card at a Time</em>
             </h2>
           </div>
 
-          <p className="text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto mb-16">
+          <p className="text-[15px] sm:text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto mb-10 md:mb-16">
             Children in hospitals often feel isolated. Cards with Hearts bridges that gap by allowing
             anyone, anywhere to send encouraging messages, bringing <strong className="text-[#1a1a1a] font-semibold">comfort and connection</strong> to families
             when they need it most.
@@ -152,23 +152,23 @@ export default function CardsWithHeartsPage() {
       </div>
 
       {/* Overview Section */}
-      <div id="overview" className="bg-white pt-8 pb-20 scroll-mt-28">
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500 mb-12 ">Overview</p>
+      <div id="overview" className="bg-white pt-6 pb-12 md:pt-8 md:pb-20 scroll-mt-24 md:scroll-mt-28">
+        <div className="max-w-6xl mx-auto px-6 md:px-8">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-8 md:mb-12">Overview</p>
 
-          <div className="text-center mb-6">
-            <h2 className={`text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
+          <div className="text-center mb-4 md:mb-6">
+            <h2 className={`text-2xl sm:text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
               What is <em className="text-[#7D6E61] italic">Cards with Hearts</em>?
             </h2>
           </div>
 
-          <p className="text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto mb-16">
+          <p className="text-[15px] sm:text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto mb-10 md:mb-16">
             Cards with Hearts is a platform connecting people worldwide with children in Sri Lankan
             hospitals through handmade cards filled with hope. Contributors of all ages write
             kid-friendly cards that bring <strong className="text-[#1a1a1a] font-semibold">comfort to children</strong> facing difficult times.
           </p>
 
-          <div className="relative w-full max-w-4xl aspect-video rounded-lg overflow-hidden mx-auto mb-20">
+          <div className="relative w-full max-w-4xl aspect-video rounded-lg overflow-hidden mx-auto mb-12 md:mb-20">
             <Image
               src="/images/cwh_overview.png"
               alt="Cards with Hearts platform overview"
@@ -177,15 +177,15 @@ export default function CardsWithHeartsPage() {
             />
           </div>
 
-          <p className="text-xs uppercase tracking-wider text-gray-500 mb-12 ">My Role</p>
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-8 md:mb-12">My Role</p>
 
-          <div className="text-center mb-6">
-            <h2 className={`text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
+          <div className="text-center mb-4 md:mb-6">
+            <h2 className={`text-2xl sm:text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
               Designed and built <em className="text-[#7D6E61] italic">end-to-end</em>
             </h2>
           </div>
 
-          <p className="text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto">
+          <p className="text-[15px] sm:text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto">
             I designed and built the entire platform as the sole designer and developer. Working with
             a small team of 2 PM, 1 content writer, and myself, I led the <strong className="text-[#1a1a1a] font-semibold">product design, user
             experience, and implementation</strong> from concept to launch.
@@ -195,12 +195,12 @@ export default function CardsWithHeartsPage() {
 
       {/* Problems */}
       <div className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="max-w-6xl mx-auto px-6 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Problem #1 */}
             <div>
               <p className="text-xs uppercase tracking-wider text-gray-500 mb-6 ">Problem #1</p>
-              <h2 className={`text-2xl md:text-[28px] leading-[1.2] mb-4 ${chelseaMarket.className}`}>
+              <h2 className={`text-xl sm:text-2xl md:text-[28px] leading-[1.2] mb-4 ${chelseaMarket.className}`}>
                 Children in hospitals felt <em className="text-[#7D6E61] italic">isolated</em>.
               </h2>
               <p className="text-[15px] leading-relaxed text-gray-600">
@@ -223,7 +223,7 @@ export default function CardsWithHeartsPage() {
             {/* Problem #3 */}
             <div>
               <p className="text-xs uppercase tracking-wider text-gray-500 mb-6 ">Problem #3</p>
-              <h2 className={`text-2xl md:text-[28px] leading-[1.2] mb-4 ${chelseaMarket.className}`}>
+              <h2 className={`text-xl sm:text-2xl md:text-[28px] leading-[1.2] mb-4 ${chelseaMarket.className}`}>
                 People wanted to help but had <em className="text-[#7D6E61] italic">no channel</em>.
               </h2>
               <p className="text-[15px] leading-relaxed text-gray-600">
@@ -235,17 +235,17 @@ export default function CardsWithHeartsPage() {
       </div>
 
       {/* Research Section */}
-      <div className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500 mb-12 ">Research</p>
+      <div className="bg-white py-12 md:py-20">
+        <div className="max-w-6xl mx-auto px-6 md:px-8">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-8 md:mb-12">Research</p>
 
-          <div className="text-center mb-6">
-            <h2 className={`text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
+          <div className="text-center mb-4 md:mb-6">
+            <h2 className={`text-2xl sm:text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
               Understanding the <em className="text-[#7D6E61] italic">hospital experience</em>.
             </h2>
           </div>
 
-          <p className="text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto mb-16">
+          <p className="text-[15px] sm:text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto mb-10 md:mb-16">
             We contacted Colombo Lady Ridgeway Children&apos;s Hospital and spoke with staff and reviewed existing programs to understand how
             <strong className="text-[#1a1a1a] font-semibold"> children experience isolation</strong> and what kind of support would be most meaningful, informing the platform&apos;s design and card delivery flow.
           </p>
@@ -262,16 +262,16 @@ export default function CardsWithHeartsPage() {
       </div>
 
       {/* Design Approach Section */}
-      <div className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500 mb-12 ">Design Approach</p>
+      <div className="bg-white py-12 md:py-20">
+        <div className="max-w-6xl mx-auto px-6 md:px-8">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-8 md:mb-12">Design Approach</p>
 
           {/* From Research to Design */}
-          <div className="mb-20">
-            <h2 className={`text-3xl md:text-[40px] leading-[1.2] mb-6 ${chelseaMarket.className}`}>
+          <div className="mb-12 md:mb-20">
+            <h2 className={`text-2xl sm:text-3xl md:text-[40px] leading-[1.2] mb-4 md:mb-6 ${chelseaMarket.className}`}>
               From Research to Design
             </h2>
-            <p className="text-[16px] leading-relaxed text-gray-600 max-w-3xl mb-12">
+            <p className="text-[15px] sm:text-[16px] leading-relaxed text-gray-600 max-w-3xl mb-8 md:mb-12">
               To address the isolation and fragmentation we learned from Colombo Lady Ridgeway Children&apos;s Hospital, I designed a platform that puts <strong className="text-[#1a1a1a] font-semibold">card selection and message writing front and center</strong>, making it easy for anyone to contribute without friction.
             </p>
             <div className="relative w-full max-w-4xl aspect-[4/3] rounded-lg overflow-hidden mx-auto bg-gray-50">
@@ -286,32 +286,32 @@ export default function CardsWithHeartsPage() {
 
           {/* Validating Through Iteration */}
           <div>
-            <h2 className={`text-3xl md:text-[40px] leading-[1.2] mb-4 ${chelseaMarket.className}`}>
+            <h2 className={`text-2xl sm:text-3xl md:text-[40px] leading-[1.2] mb-4 ${chelseaMarket.className}`}>
               Validating Through Iteration
             </h2>
-            <p className="text-[16px] leading-relaxed text-gray-600 mb-12 max-w-3xl">
+            <p className="text-[15px] sm:text-[16px] leading-relaxed text-gray-600 mb-8 md:mb-12 max-w-3xl">
               Through validation with the team and hospital partners, I iterated on 4 key areas based on feedback:
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-6 rounded-xl bg-[#53232A]/5 border border-[#53232A]/10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="p-4 md:p-6 rounded-xl bg-[#53232A]/5 border border-[#53232A]/10">
                 <h3 className="font-semibold text-[#53232A] mb-2">Card Selection</h3>
                 <p className="text-[15px] leading-relaxed text-gray-600">
                   Simplified the card picker so contributors can browse and choose a design in seconds, reducing drop-off.
                 </p>
               </div>
-              <div className="p-6 rounded-xl bg-[#53232A]/5 border border-[#53232A]/10">
+              <div className="p-4 md:p-6 rounded-xl bg-[#53232A]/5 border border-[#53232A]/10">
                 <h3 className="font-semibold text-[#53232A] mb-2">Kid-Friendly Guidelines</h3>
                 <p className="text-[15px] leading-relaxed text-gray-600">
                   Added clear prompts and examples to ensure messages are age-appropriate and uplifting for hospitalized children.
                 </p>
               </div>
-              <div className="p-6 rounded-xl bg-[#53232A]/5 border border-[#53232A]/10">
+              <div className="p-4 md:p-6 rounded-xl bg-[#53232A]/5 border border-[#53232A]/10">
                 <h3 className="font-semibold text-[#53232A] mb-2">Submission Flow</h3>
                 <p className="text-[15px] leading-relaxed text-gray-600">
                   Streamlined the submit step with minimal fields (name and message only) to keep the barrier to contribution low.
                 </p>
               </div>
-              <div className="p-6 rounded-xl bg-[#53232A]/5 border border-[#53232A]/10">
+              <div className="p-4 md:p-6 rounded-xl bg-[#53232A]/5 border border-[#53232A]/10">
                 <h3 className="font-semibold text-[#53232A] mb-2">Hospital Delivery</h3>
                 <p className="text-[15px] leading-relaxed text-gray-600">
                   Designed the backend flow to match hospital intake, ensuring physical cards reach the right wards and children.
@@ -323,18 +323,18 @@ export default function CardsWithHeartsPage() {
       </div>
 
       {/* Solutions Section */}
-      <div className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500 mb-12 ">Solutions</p>
+      <div className="bg-white py-12 md:py-20">
+        <div className="max-w-6xl mx-auto px-6 md:px-8">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-8 md:mb-12">Solutions</p>
 
           {/* Solution #1 */}
-          <div className="mb-20">
-            <p className="text-xs uppercase tracking-wider text-gray-500 mb-4 ">Solution #1: Direct Connection</p>
-            <h2 className={`text-3xl md:text-[40px] leading-[1.2] mb-8 ${chelseaMarket.className}`}>
+          <div className="mb-12 md:mb-20">
+            <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">Solution #1: Direct Connection</p>
+            <h2 className={`text-2xl sm:text-3xl md:text-[40px] leading-[1.2] mb-6 md:mb-8 ${chelseaMarket.className}`}>
               A platform that brings encouragement <em className="text-[#7D6E61] italic">directly</em> to hospitalized children.
             </h2>
-            <div className="grid md:grid-cols-5 gap-8 items-center">
-              <div className="md:col-span-3">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 items-start md:items-center">
+              <div className="md:col-span-3 order-1">
                 <div className="relative w-full aspect-video rounded-lg overflow-hidden">
                   <video
                     className="w-full h-full object-cover"
@@ -348,8 +348,8 @@ export default function CardsWithHeartsPage() {
                   </video>
                 </div>
               </div>
-              <div className="md:col-span-2">
-                <p className="text-[16px] leading-relaxed text-gray-600">
+              <div className="md:col-span-2 order-2">
+                <p className="text-[15px] sm:text-[16px] leading-relaxed text-gray-600">
                   Cards with Hearts connects contributors with children in hospitals, delivering <strong className="text-[#1a1a1a] font-semibold">physical cards</strong> with personalized messages so kids feel <strong className="text-[#1a1a1a] font-semibold">connected</strong> to their communities.
                 </p>
               </div>
@@ -357,13 +357,13 @@ export default function CardsWithHeartsPage() {
           </div>
 
           {/* Solution #2 */}
-          <div className="mb-20">
+          <div className="mb-12 md:mb-20">
             <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">Solution #2: Coordinated Delivery</p>
-            <h2 className={`text-3xl md:text-[40px] leading-[1.2] mb-8 ${chelseaMarket.className}`}>
+            <h2 className={`text-2xl sm:text-3xl md:text-[40px] leading-[1.2] mb-6 md:mb-8 ${chelseaMarket.className}`}>
               One coordinated flow from contributor to <em className="text-[#7D6E61] italic">child</em>.
             </h2>
-            <div className="grid md:grid-cols-5 gap-8 items-center">
-              <div className="md:col-span-3">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 items-start md:items-center">
+              <div className="md:col-span-3 order-1">
                 <div className="relative w-full aspect-video rounded-lg overflow-hidden">
                   <Image
                     src="/images/cwh/4.png"
@@ -373,8 +373,8 @@ export default function CardsWithHeartsPage() {
                   />
                 </div>
               </div>
-              <div className="md:col-span-2">
-                <p className="text-[16px] leading-relaxed text-gray-600">
+              <div className="md:col-span-2 order-2">
+                <p className="text-[15px] sm:text-[16px] leading-relaxed text-gray-600">
                   The platform collects and prints messages, then partners with hospitals like Colombo Lady Ridgeway to deliver cards, <strong className="text-[#1a1a1a] font-semibold">reducing</strong> the delivery process from multiple steps to <strong className="text-[#1a1a1a] font-semibold">one streamlined flow</strong>.
                 </p>
               </div>
@@ -383,8 +383,8 @@ export default function CardsWithHeartsPage() {
 
           {/* Solution #3 */}
           <div>
-            <p className="text-xs uppercase tracking-wider text-gray-500 mb-4 ">Solution #3: Accessible Web Interface</p>
-            <h2 className={`text-3xl md:text-[40px] leading-[1.2] mb-8 ${chelseaMarket.className}`}>
+            <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">Solution #3: Accessible Web Interface</p>
+            <h2 className={`text-2xl sm:text-3xl md:text-[40px] leading-[1.2] mb-6 md:mb-8 ${chelseaMarket.className}`}>
               A simple interface for <em className="text-[#7D6E61] italic">anyone, anywhere</em>.
             </h2>
             <div className="grid md:grid-cols-5 gap-8 items-center">
@@ -402,8 +402,8 @@ export default function CardsWithHeartsPage() {
                   </video>
                 </div>
               </div>
-              <div className="md:col-span-2">
-                <p className="text-[16px] leading-relaxed text-gray-600">
+              <div className="md:col-span-2 order-2">
+                <p className="text-[15px] sm:text-[16px] leading-relaxed text-gray-600">
                   cardswhearts.com lets contributors worldwide send a card in <strong className="text-[#1a1a1a] font-semibold">under 2 minutes</strong>, from choosing a design to writing a message, <strong className="text-[#1a1a1a] font-semibold">removing barriers</strong> from intention to impact.
                 </p>
               </div>
@@ -413,17 +413,17 @@ export default function CardsWithHeartsPage() {
       </div>
 
       {/* Reflection Section */}
-      <div className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500 mb-12">Reflection</p>
+      <div className="bg-white py-12 md:py-20">
+        <div className="max-w-6xl mx-auto px-6 md:px-8">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-8 md:mb-12">Reflection</p>
 
-          <div className="text-center mb-6">
-            <h2 className={`text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
+          <div className="text-center mb-4 md:mb-6">
+            <h2 className={`text-2xl sm:text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
               What I <em className="text-[#7D6E61] italic">learned</em>
             </h2>
           </div>
 
-          <p className="text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto mb-16">
+          <p className="text-[15px] sm:text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto mb-10 md:mb-16">
             Building Cards with Hearts reinforced that <strong className="text-[#1a1a1a] font-semibold">small acts of kindness scale</strong> when the path is simple. Partnering directly with Colombo Lady Ridgeway Children&apos;s Hospital taught me how important it is to design for real constraints: hospital workflows, printing logistics, and the emotional weight of each card. If I were to do it again, I&apos;d invest earlier in <strong className="text-[#1a1a1a] font-semibold">user testing with contributors</strong> to refine the card selection flow and reduce friction even further.
           </p>
 
@@ -443,17 +443,17 @@ export default function CardsWithHeartsPage() {
       </div>
 
       {/* Live Site Section */}
-      <div className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-xs uppercase tracking-wider text-gray-500 mb-12 ">Live Site</p>
+      <div className="bg-white py-12 md:py-20">
+        <div className="max-w-6xl mx-auto px-6 md:px-8">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-8 md:mb-12">Live Site</p>
 
-          <div className="text-center mb-6">
-            <h2 className={`text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
+          <div className="text-center mb-4 md:mb-6">
+            <h2 className={`text-2xl sm:text-3xl md:text-[48px] leading-[1.2] ${chelseaMarket.className}`}>
               cardswhearts.com
             </h2>
           </div>
 
-          <p className="text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto mb-16">
+          <p className="text-[15px] sm:text-[16px] leading-relaxed text-gray-600 text-center max-w-3xl mx-auto mb-10 md:mb-16">
             Visit the live site to send a card and <strong className="text-[#1a1a1a] font-semibold">bring a smile to a child&apos;s face</strong>.
           </p>
 
@@ -462,7 +462,7 @@ export default function CardsWithHeartsPage() {
               href="https://cardswhearts.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#53232A] text-white rounded-full font-medium hover:bg-[#3e1b1b] transition-colors"
+              className="px-6 py-3.5 sm:px-8 sm:py-4 bg-[#53232A] text-white rounded-full font-medium hover:bg-[#3e1b1b] transition-colors text-sm sm:text-base"
             >
               Visit cardswhearts.com
             </a>

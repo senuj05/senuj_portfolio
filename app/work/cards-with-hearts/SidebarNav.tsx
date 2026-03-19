@@ -1,8 +1,6 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
-import gsap from "gsap"
-import ScrollSmoother from "gsap/ScrollSmoother"
 
 const sections = [
   { id: "overview", label: "Overview" },
@@ -17,13 +15,7 @@ export default function SidebarNav() {
     event.preventDefault()
     const target = document.getElementById(id)
     if (!target) return
-
-    const smoother = ScrollSmoother.get && ScrollSmoother.get()
-    if (smoother) {
-      smoother.scrollTo(target, true, "top top")
-    } else {
-      target.scrollIntoView({ behavior: "smooth", block: "start" })
-    }
+    target.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
   useEffect(() => {

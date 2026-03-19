@@ -32,16 +32,6 @@
   }
 }
 
-#smooth-wrapper {
-  height: 100%;
-  overflow: hidden;
-}
-
-#smooth-content {
-  overflow: visible;
-}
-
-
 @media (pointer: fine) {
   body,
   body * {

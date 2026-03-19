@@ -57,10 +57,6 @@ export default function FooterBouncyWave({ fill = 'white' }: { fill?: string }) 
       )
     }
 
-    const scroller = document.querySelector("#smooth-content")
-      ? "#smooth-content"
-      : undefined
-
     const trigger = ScrollTrigger.create({
       trigger: footer,
       start: "top bottom",
@@ -74,7 +70,6 @@ export default function FooterBouncyWave({ fill = 'white' }: { fill?: string }) 
         const curve = gsap.utils.clamp(-120, 120, -velocity / 15 || 40)
         applyCurve(curve)
       },
-      scroller,
     })
 
     return () => {
