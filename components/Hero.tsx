@@ -2,7 +2,6 @@
 
 import { useLayoutEffect, useRef } from "react"
 import gsap from "gsap"
-
 export default function Hero() {
   const headingRef = useRef<HTMLHeadingElement | null>(null)
 
@@ -31,7 +30,7 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto">
         <h1
           ref={headingRef}
-          className="text-5xl md:text-6xl font-bold tracking-tight text-[#53232A] text-left font-sf-pro"
+          className="text-5xl md:text-6xl font-bold tracking-tight text-[#53232A] text-left"
           style={{ opacity: 1 }}
         >
           Senuvi Jayasinghe.

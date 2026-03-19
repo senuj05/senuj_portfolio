@@ -29,21 +29,21 @@ export default function HomeHeader() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 py-8 bg-[#53232A] cursor-visible">
         <div className="px-6 md:px-12 lg:px-24 flex items-center justify-between w-full relative">
-          <Link href="/" className="flex items-center gap-3 font-sf-pro flex-shrink-0">
+          <Link href="/" className="flex items-center gap-3  flex-shrink-0">
             <div className="w-6 h-6 rounded-full flex-shrink-0 bg-white"></div>
             <span className="text-lg font-normal text-white hover:text-white/90 transition-colors">Senu.j</span>
           </Link>
-          <nav className="hidden md:flex items-center justify-center gap-8 md:gap-12 font-sf-pro font-normal absolute left-1/2 -translate-x-1/2">
-<Link href="/work" className="font-sf-pro text-white/90 hover:text-white text-base md:text-lg transition-colors">
+          <nav className="hidden md:flex items-center justify-center gap-8 md:gap-12  font-normal absolute left-1/2 -translate-x-1/2">
+<Link href="/work" className=" text-white/90 hover:text-white text-base md:text-lg transition-colors">
             Work
           </Link>
-            <Link href="/playground" className="font-sf-pro text-white/90 hover:text-white text-base md:text-lg transition-colors">
+            <Link href="/playground" className=" text-white/90 hover:text-white text-base md:text-lg transition-colors">
               Play
             </Link>
-            <Link href="/about" className="font-sf-pro text-white/90 hover:text-white text-base md:text-lg transition-colors">
+            <Link href="/about" className=" text-white/90 hover:text-white text-base md:text-lg transition-colors">
               About
             </Link>
-            <Link href="/films" className="font-sf-pro text-white/90 hover:text-white text-base md:text-lg transition-colors">
+            <Link href="/films" className=" text-white/90 hover:text-white text-base md:text-lg transition-colors">
               Gallery
             </Link>
           </nav>
@@ -66,7 +66,7 @@ export default function HomeHeader() {
         <div className="fixed inset-0 z-40 cursor-visible bg-white">
           <div className="h-full flex flex-col">
             <div className="flex justify-between items-center px-6 pt-6 pb-6">
-              <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 font-sf-pro">
+              <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 ">
                 <div className="w-6 h-6 rounded-full flex-shrink-0 bg-[#53232A]"></div>
                 <span className="text-lg font-normal text-gray-900 hover:text-gray-700 transition-colors">Senu.j</span>
               </Link>
@@ -80,7 +80,7 @@ export default function HomeHeader() {
                 </svg>
               </button>
             </div>
-            <nav className="flex-1 flex flex-col pt-12 px-6 font-sf-pro bg-white">
+            <nav className="flex-1 flex flex-col pt-12 px-6  bg-white">
               {menuItems.map((item, index) => (
                 <div key={item.number}>
                   <Link
@@ -90,7 +90,7 @@ export default function HomeHeader() {
                   >
                     <div className="flex items-center gap-4">
                       <span className="text-sm font-medium w-8 text-gray-400">{item.number}</span>
-                      <span className="font-sf-pro text-3xl md:text-4xl font-normal text-gray-900 group-hover:text-gray-600 transition-colors">
+                      <span className=" text-3xl md:text-4xl font-normal text-gray-900 group-hover:text-gray-600 transition-colors">
                         {item.label}
                       </span>
                     </div>
