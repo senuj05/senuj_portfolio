@@ -253,22 +253,22 @@ export default function UXProjects() {
       </div>
 
       {/* Tinkering & Tangents */}
-      <section className={`mt-24 max-w-[1200px] w-full ${jost.className}`}>
-        <h2 className={`text-2xl sm:text-3xl font-semibold text-[#1a1a1a] mb-4 ${chelseaMarket.className}`}>Tinkering & Tangents</h2>
-        <p className="text-[#4a4a4a] text-base sm:text-lg leading-relaxed w-full font-normal mb-12">
+      <section className={`mt-16 md:mt-24 max-w-[1200px] w-full ${jost.className}`}>
+        <h2 className={`text-xl sm:text-2xl md:text-3xl font-semibold text-[#1a1a1a] mb-3 md:mb-4 ${chelseaMarket.className}`}>Tinkering & Tangents</h2>
+        <p className="text-[#4a4a4a] text-sm sm:text-base md:text-lg leading-relaxed w-full font-normal mb-8 md:mb-12">
           I&apos;ve never really been able to separate designing from building. Most of my work happens somewhere in the back-and-forth between Figma and Cursor; iterating until it just feels right. The question driving all of it: can we make even the most mundane tool a little delightful?
         </p>
 
-        {/* Masonry-style grid placeholders */}
+        {/* Masonry-style grid - stacks on mobile, 2-col on sm, 3-col on lg */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
-          style={{ gridAutoRows: '100px' }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-3"
+          style={{ gridAutoRows: 'minmax(100px, auto)' }}
         >
           <a
             href="https://emoji-mosaic.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative rounded-xl h-48 sm:h-56 lg:h-auto lg:col-start-1 lg:row-start-1 lg:row-span-3 overflow-hidden bg-gray-200 block"
+            className="group relative rounded-xl h-48 sm:h-56 md:h-60 lg:h-auto lg:col-start-1 lg:row-start-1 lg:row-span-3 overflow-hidden bg-gray-200 block min-h-[192px] sm:min-h-0 max-w-[280px] sm:max-w-[320px] lg:max-w-[360px] place-self-start"
           >
             <video
               src="/images/emojimosaic.mov"
@@ -278,25 +278,25 @@ export default function UXProjects() {
               muted
               playsInline
             />
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-between">
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 sm:p-4 flex flex-col justify-between">
               <div className="flex justify-end">
-                <span className="text-white text-sm font-medium flex items-center gap-2">
+                <span className="text-white text-xs sm:text-sm font-medium flex items-center gap-2">
                   View live site
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" className="sm:w-4 sm:h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" y1="14" x2="21" y2="3" />
                   </svg>
                 </span>
               </div>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-white/20 text-white text-xs rounded backdrop-blur-sm">React</span>
-                <span className="px-2 py-1 bg-white/20 text-white text-xs rounded backdrop-blur-sm">TypeScript</span>
-                <span className="px-2 py-1 bg-white/20 text-white text-xs rounded backdrop-blur-sm">Canvas</span>
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                <span className="px-2 py-0.5 sm:py-1 bg-white/20 text-white text-[10px] sm:text-xs rounded backdrop-blur-sm">React</span>
+                <span className="px-2 py-0.5 sm:py-1 bg-white/20 text-white text-[10px] sm:text-xs rounded backdrop-blur-sm">TypeScript</span>
+                <span className="px-2 py-0.5 sm:py-1 bg-white/20 text-white text-[10px] sm:text-xs rounded backdrop-blur-sm">Canvas</span>
               </div>
             </div>
           </a>
-          <div className="group relative rounded-xl h-72 sm:h-80 lg:h-auto lg:col-start-2 lg:row-start-1 lg:row-span-5 overflow-hidden bg-gray-200">
+          <div className="group relative rounded-xl h-60 sm:h-72 md:h-96 lg:h-auto lg:col-start-2 lg:row-start-1 lg:row-span-5 overflow-hidden bg-gray-200 min-h-[240px] sm:min-h-0 max-w-[280px] sm:max-w-[320px] lg:max-w-[360px] place-self-start">
             <video
               src="/images/huddle.mov"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -305,9 +305,9 @@ export default function UXProjects() {
               muted
               playsInline
             />
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-              <div className="flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-white/20 text-white text-xs rounded backdrop-blur-sm">Figma</span>
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 sm:p-4 flex flex-col justify-end">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                <span className="px-2 py-0.5 sm:py-1 bg-white/20 text-white text-[10px] sm:text-xs rounded backdrop-blur-sm">Figma</span>
               </div>
             </div>
           </div>
