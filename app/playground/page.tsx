@@ -42,6 +42,7 @@ const COLLAGE_ITEMS: { src: string; caption: string }[] = [
   { src: '/play/HatchingVanGogh.png', caption: 'Hatching technique inspired by Van Gogh\'s brushwork.' },
   { src: '/play/halloween.png', caption: 'Spooky season vibes and creative play.' },
   { src: '/play/harrypotter.png', caption: 'A wanted poster from the wizarding world, aged and worn.' },
+  { src: '/play/hotpot.png', caption: 'Hot pot from above—broth, crab sticks, beef, cilantro, and good company.' },
   { src: '/play/me.png', caption: 'A snapshot in time, a moment captured.' },
   { src: '/play/pavana.png', caption: 'Pavana - a breath of wind, a quiet pause.' },
   { src: '/play/peraher.png', caption: 'The rhythm of the perahera, lights and drums in the night.' },
@@ -243,7 +244,7 @@ export default function PlaygroundPage() {
                 onPointerLeave={(e) => handleImagePointerUp(e, i)}
                 onPointerCancel={(e) => handleImagePointerUp(e, i)}
               >
-                <div className="w-full aspect-square flex items-center justify-center overflow-hidden rounded-md mb-3 bg-white/80 rounded-lg shadow-sm">
+                <div className="w-full aspect-square flex items-center justify-center overflow-hidden rounded-md mb-3">
                   <Image
                     src={item.src}
                     alt=""
