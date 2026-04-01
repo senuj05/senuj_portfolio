@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A modern, responsive portfolio website built with Next.js, React, and Tailwind CSS.
+A modern, responsive portfolio website built with typescript,Javascript , and CSS.
 
 ## Getting Started
 
