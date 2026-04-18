@@ -1,6 +1,7 @@
 # Portfolio Website
 
 A modern, responsive portfolio website built with typescript,Javascript , and CSS.
+Visit my portfolio : [senuj.com](https://www.senuj.com)
 
 ## Getting Started
 
